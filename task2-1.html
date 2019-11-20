@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+  <button id="button" >确认填写</button>
+
+  <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+
+<script type="text/javascript">
+//事件绑定兼容
+function addEventHandler(ele, event, hanlder) {
+    if (ele.addEventListener) {
+        ele.addEventListener(event, hanlder, false);
+    } else if (ele.attachEvent) {
+        ele.attachEvent("on"+event, hanlder);
+    } else  {
+        ele["on" + event] = hanlder;
+    }
+}
+(function() {
+  
+  /*	
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的值，并显示在aqi-display中
+  */
+
+ var btn=document.getElementById('button');
+ function asd(){//  此处直接获取点击事件的"ID"
+    //   直接用正常的函数点击事件实现不了，原因不明
+    // function asp(){
+      // if(event.keyCode==13){
+ var num;
+
+ var a=document.getElementById("aqi-display").innerHTML=isNaN(//  在这里把输入框里的值和输出的值联系在一起，分别获取"id"的值并相等，不知为何这里用啊变量相连接执行不了，原因不明（已知）
+                                                              // 原因已知，要把“变量名.innerHTML=xxx”这样写才行
+                                                              //  这里用了isNaN（）函数，用来判断输入值是否为非数字值，以及用了number（）函数来转换字串符，“~”用来返回数值反码
+     num=Number(document.getElementById("aqi-input").value.trim()||"~")
+ ) ? "请输入数值" : num;//  此处“？”条件操作符，和if差不多，但只用来判断true/false
+
+};
+var aqiInput=document.getElementById("aqi-input");
+addEventHandler(aqiInput,"keyup",function(){
+  if(event.keyCode==13){
+   asd();
+  }
+})
+addEventHandler(btn,"click",function(){
+  asd();
+})
+})();
+
+</script>
+</body>
+</html>

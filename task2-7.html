@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task2-7</title>
+   <style>
+      *{
+          padding:0;
+          margin:0;
+      }
+       .contain{
+           width:800px;
+           margin:20px auto;
+           /* border:1px solid red; */
+       }
+       #sort{
+           display:flex;
+           align-items:flex-end;
+           height:505px;
+           /* border:1px solid blue; */
+       }
+       #sort div{
+           margin:3px;
+           width:12px;
+           background:rgb(190, 72, 72);
+           cursor: pointer;
+       }
+   </style>
+</head>
+<body>
+    <div class="contain">  
+        <div class="ctrl">
+            <input type="text" id="screen">
+            <input type="button" class="btn" value="左侧入">
+            <input type="button" class="btn" value="右侧入">
+            <input type="button" class="btn" value="左侧出">
+            <input type="button" class="btn" value="右侧出"> 
+            <input type="button" class="btn" value="随机生成">
+            <input type="button" class="btn" value="冒泡排序">
+        </div>
+        <div id="sort">
+            <!-- <div></div> -->
+            <!-- <div></div>.... -->
+        </div>    
+    </div>
+    
+<script src="task2-7.js"></script>
+</body>
+</html>

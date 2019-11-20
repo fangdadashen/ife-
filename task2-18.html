@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .con{
+            border: 1px solid paleturquoise;
+            text-align: center;
+            width:50%;
+            margin:0 auto;
+        }
+        input{
+            margin:15px 0;
+            border-radius:5px;
+            height:20px;
+            width:250px;
+            
+        }
+        input:hover{
+            box-shadow:1px 1px 5px turquoise,-1px -1px 5px turquoise ;
+            cursor:pointer;
+        }
+        span{
+            margin-right:10px;
+            /* font-weight: bold; */
+            /* background: palevioletred; */
+        }
+        #btn{
+            border-radius:8px;
+            background: cornflowerblue;
+            width:220px;
+            
+        }
+        p{
+            /* background: paleturquoise; */
+            margin-left:235px;
+            text-align: left;
+            height:20px;
+            color:rgba(83, 79, 79, 0.603);
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <span>名称</span><input type="text" id="name"><br>
+        <p></p>
+        <span>密码</span><input type="password" id="password"><br>
+        <p></p>
+        <span>确认</span><input type="password" id="passcheck"><br>
+        <p></p>
+        <span>邮箱</span><input type="text" id="email"><br>
+        <p></p>
+        <span>手机</span><input type="text" id="phone"><br>
+        <p></p>
+        <input type="button" id="btn" value="验证"><br>
+    </div>
+<script src="task2-18.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body {
+		width: 800px;
+		margin: 0 auto;
+	}
+        /* .contain{
+            width: 50%;
+            margin:20px auto;
+            border:1px solid blue;
+        } */
+        #tag{
+            /* height:70px; */
+            /* width: 100%; */
+            /* background: blue; */
+            /* margin-top:15px; */
+            display:flex;
+            
+        }
+        #tag div{
+            /* display:inline-block; */
+            /* width:50px; */
+            /* height:50px; */
+            line-height: 50px;
+            background: pink;
+            margin-left:10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #tag div:hover{
+            background:red;
+        }
+        #tag div:hover:before{
+            content:"点击删除:"
+        }
+        #hobby{
+            /* height:70px; */
+            /* width: 100%; */
+            /* background: brown; */
+            /* margin-top:15px; */
+            display:flex;
+        }
+        #hobby div{
+            /* display:inline-block; */
+            /* width:50px; */
+            /* height:50px; */
+            line-height: 50px;
+            background: lightblue;
+            margin-left:10px;
+            text-align: center;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <span>Tag:</span><input type="text" placeholder="TAG输入" id="tag-input">
+        <div id="tag">
+            <!-- <div>nihaoya</div>
+            <div>2</div> -->
+        </div>
+        <br>
+        <textarea rows="7" cols="20"  id="hobby-input" placeholder="请输入兴趣爱好"></textarea> 
+        <br>
+        <input type="button" id="hobby-button" value="确认兴趣爱好">
+        <div id="hobby">
+            <!-- <div>1</div>
+            <div>2</div> -->
+        </div>
+    </div>    
+<script src="task2-9.js"></script>    
+</body>
+</html>

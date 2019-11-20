@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* body{
+            background: powderblue;
+        } */
+        div{
+            border:1px solid black;
+           
+        }
+        .contain{
+            width:1000px;
+            height:300px;
+            margin:100px auto;
+            margin-bottom: 10px;
+        }
+        .contain,.left-3,.left-2,.left-l,.left-r,.right-3,.right-2,.right-l,.right-r{
+            padding:20px;
+            display:flex;
+            justify-content: space-between;
+        }
+        .left-3,.right-3{
+            width:450px;
+            height:260px;
+        }
+        .left-2,.right-2{
+            width:170px;
+            height:220px;
+        }
+        .left-r,.left-l,.right-l,.right-r{
+            width:35px;
+            height:180px;
+        }
+        input{
+            margin-left:275px;
+            width:80px;
+            height:50px;
+            font-size:20px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+            <div class="left-3">
+                <div class="left-2">
+                    <div class="left-l">
+
+                    </div>
+                    <div class="left-r">
+
+                    </div>
+                </div>
+                <div class="left-2">
+                    <div class="left-l">
+
+                    </div>
+                    <div class="left-r">
+
+                    </div>
+                </div>
+            </div>
+            <div class="right-3">
+                <div class="right-2">
+                    <div class="right-l">
+        
+                    </div>
+                    <div class="right-r">
+        
+                    </div>
+                </div>
+                <div class="right-2">
+                    <div class="right-l">
+        
+                    </div>
+                    <div class="right-r">
+        
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    <input type="button" value="前序">
+	<input type="button" value="中序">
+    <input type="button" value="后序">
+<script src="task.2-10.js"></script>
+</body>
+</html>

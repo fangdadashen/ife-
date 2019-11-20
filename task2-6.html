@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='jquery.js'></script>
+    <title>task2-6</title>
+    
+    <style>
+        li {
+                display: inline-block;
+                background-color: red;
+                color: white;
+                padding-left: 8px;
+                padding-right: 8px;
+                height: 30px;
+                margin-right: 10px;
+                text-align: center;
+                line-height: 30px;
+                cursor: pointer;
+            }
+    </style>
+</head>
+
+<body>
+        <div class="ctrl">
+                <input type="text" id="screen">
+                <input type="button" class="btn" value="左侧入" id="left">
+                <input type="button" class="btn" value="右侧入" id="right">
+                <input type="button" class="btn" value="左侧出" id="lfdelete">
+                <input type="button" class="btn" value="右侧出" id="rgdelete"> 
+        </div>
+            <div class="box">
+                <ul></ul>
+            </div>
+    <!-- <script src="task2-6.js"></script> -->
+    <script>
+    console.log($);
+    //添加功能
+    function create(LorR){
+        var value=$('#screen').val();
+        if(/^[1-9][0-9]$|100/.test(value)){
+            if($('li').length<=60){
+                if(LorR==1){
+                    $('ul').prepend('<li>'+value+'</li>');
+                }else{
+                    $('ul').append('<li>'+value+'</li>');
+                }
+            }else{
+                alert('最多只能输入60个哦')
+            }
+        }else{
+            alert('请输入10-100的数字');
+        }
+    }
+    //左添加
+    $('#left').on('click',function(){
+        create(1);
+    });
+    //右添加
+    $('#right').on('click',function(){
+        create(2);
+    });
+    //左删除
+    $('#lfdelete').on('click',function(){
+        $('ul').find('li:first').remove();//因为没找到有专门删除第一个和最后一个的，所以就用find()代替了
+    });
+    //右删除
+    $('#rgdelete').on('click',function(){
+        $('ul').find('li:last').remove();
+    });
+    //点击删除
+    $('ul').on('mouseover',function(){
+        // $('li').each(function(index,element){
+            $('li').on('click',function(){
+                $(this).remove();
+            })
+        // })
+    })
+    </script>
+</body>
+</html>        

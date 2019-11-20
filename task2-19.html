@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task2-19</title>
+    <style>
+    body{
+        font-family: '宋体';
+    }
+    .con{
+        /* border: 1px solid peru; */
+        text-align:center;
+        width:700px;
+        margin:0 auto;
+        padding:100px;
+    }
+    .con span{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .radio{
+        margin: 30px 40px;
+        display: inline-block;
+        /* border:1px solid black; */
+    }
+    label{
+        cursor:pointer;
+    }
+    select{
+        width:200px;
+        height:50px;
+        font-size: 20px;
+        margin:0 20px;
+        border:1px solid #ccc;/*因为selelt自带border，因此要改变的话要先自己设置一个border */
+        border-radius: 5px;
+    }
+    .select-in span,.select-out span{
+        margin-right:20px;
+    }
+    .hidden{
+        display:none;
+    }
+    .out{
+        width:300px;
+        height:50px;
+        margin:0 20px;
+        border:1px solid #ccc;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div id="select-radio">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="school" id="inschool" checked=checked><span>在校生</span>
+                </label>
+            </div>
+            <div class="radio">    
+                <label>
+                    <input type="radio" name="school" id="outschool"><span>非在校生</span>
+                </label>
+            </div>
+        </div>
+        <div class="select-in">
+            <span>学校</span>
+            <select id="one" onchange="change(this.value)">
+                <option value="0" selected="selected">请选择城市</option>
+                <option value="1">北京</option>
+                <option value="2">上海</option>
+                <option value="3">浙江</option>
+            </select>
+            <select id="two">
+                <option value="">请选择大学</option>
+                <!-- <option value="bj2">清华大学</option>
+                <option value="bj3">北京航空航天大学</option> -->
+            </select>
+        </div>
+        <div class="select-out hidden">
+            <span>就业单位</span>
+            <input type="text" class="out">
+        </div>
+    </div>
+<script>
+function addHandler(element,type,handler){   //绑定事件,兼容浏览器差异
+    if(element.addEventListener){      // IE9以下不兼容(dom2)
+        element.addEventListener(type,handler,false)
+    }else if(element.attachEvent){     //IE独有
+        element.attachEvent('on' + type ,handler)
+    }else{
+        element['on'+type] = handler;    //一个元素只能绑定一个处理程序(dom0)
+    }
+}
+var select=document.getElementById("select-radio");
+var Insch=document.getElementById("inschool");
+var Inschool=document.getElementsByClassName("select-in")[0];
+var Outschool=document.getElementsByClassName("select-out")[0];
+var One=document.getElementById("one");
+//切换
+addHandler(select,"click",function(){
+    if(Insch.checked){//查看选中与否作为判断条件
+        Inschool.className="inschool";
+        Outschool.className="outschool hidden";
+    }
+    else{
+        Inschool.className="inschool hidden";
+        Outschool.className="outschool";
+    }
+})
+//下拉列表框的联动
+var arr=[//这里设置一个二维数组
+    ["请选择大学"],
+    ["北京大学","清华大学","北京航空航天大学"],
+    ["上海大学","同济大学"],
+    ["浙江大学","浙江师范大学"],
+];
+function change(index){//此处index与前面的onchange(this.value)事件相连,this.value对应<option>的value(全是数字)
+    var schools=arr[index];//这里schools获得的是arr二维数组中对应的某一组数组
+    var Two=document.getElementById("two");//要关联的select
+    Two.length=0;//因前面已经写了一个"请选择大学",因此这里长度为0即可
+    for(var i=0;i<schools.length;i++){//遍历选中的数组，把数组中的每一个变成新<option>插入要关联的select里面
+        var newcode=document.createElement("option");
+        newcode.innerHTML=schools[i];
+        Two.appendChild(newcode);
+    }
+}
+</script>    
+</body>
+</html>

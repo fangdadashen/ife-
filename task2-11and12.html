@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二叉树</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    /* body{
+        background:rgba(201, 186, 189, 0.479);
+    } */
+    [class*="level-"]{
+        display: flex;
+        justify-content: space-between;
+        border:1px solid black;
+        margin:0 10px;
+        padding:0 3px;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .level-1{
+        height: 300px;
+        /* width:100%; */
+    }
+    .level-2{
+        height:260px;
+    }
+    .level-3{
+        height:220px;
+    }
+    .level-4{
+        height:140px;
+    }
+    .level-5{
+        height:120px;
+    }
+    .con{
+        padding:20px;
+        border:1px solid rgba(70, 70, 129, 0.589);
+        /* margin-top:10px; */
+        width:800px;
+        margin:10px auto;
+        text-align: center;
+        border-radius: 20px;
+    }
+    </style>
+</head>
+<body>
+        <div class="level-1" id="root">Super
+            <div class="level-2">Co
+                <div class="level-3">Apple
+                    <div class="level-4">Pear</div>
+                    <div class="level-4">Pig</div>
+                    <div class="level-4">Cola</div>
+                    <div class="level-4">Soccer</div>
+                </div>
+                <div class="level-3">Phone</div>
+            </div>
+            <div class="level-2">Note
+                <div class="level-3">Human
+                    <div class="level-4">Code</div>
+                    <div class="level-4">Opearte</div>
+                    <div class="level-4">Man</div>
+                    <div class="level-4">Co</div>
+                    <div class="level-4">Co</div>
+                </div>
+                <div class="level-3">Program
+                    <div class="level-4">Element
+                        <div class="level-5">Cat</div>
+                    </div>
+                    <div class="level-4">Glass</div>
+                </div>
+            </div>
+            <div class="level-2">Fish
+
+            </div>
+        </div>
+
+    <fieldset class="con">
+        <legend>表单：</legend>
+        <input type="button" value="深度先序优先遍历" id="preorder">
+        <input type="button" value="深度中序优先遍历" id="inorder">
+        <input type="button" value="深度后序优先遍历" id="postorder">
+        <input type="button" value="广度优先遍历" id="widetraversal">
+        <input type="text" placeholder="请输入要查询的内容" id="search-text">
+        <input type="button" value="查询" id="search-btn">
+        <br><br>
+        <input type="button" value="删除选中节点及其子节点" id="del-btn">
+        <input type="text" placeholder="新添加的节点内容" id="insert-int">
+        <input type="button" value="在选中节点下增加子节点" id="insert-btn">
+    </fieldset>    
+<script src="task2-11and12.js"></script>
+</body>
+</html>

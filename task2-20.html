@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    fieldset{
+        width:300px;
+        text-align: center;
+        float:left;
+        margin-left: 20px;
+        padding:5px;
+    }
+    #table{
+        border: 1px solid teal;
+        width:50%;
+        height:600px;
+        margin:10px auto;
+        text-align: center;
+    }
+    .input1{
+            margin:15px 0;
+            border-radius:5px;
+            height:20px;
+            width:250px;
+            
+    }
+    input:hover{
+            box-shadow:1px 1px 5px turquoise,-1px -1px 5px turquoise ;
+            cursor:pointer;
+    }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>表单生成器</legend>
+        <input type="checkbox"  id="name"><label>名称</label>
+        <input type="checkbox" id="password"><label>密码</label>
+        <input type="checkbox" id="passcheck"><label>确认</label>
+        <input type="checkbox" id="email"><label>邮箱</label>
+        <input type="checkbox" id="phone"><label>手机</label>
+        <br>
+        <input type="radio" name="style" id="style1" checked><span>样式一</span>
+        <input type="radio" name="style" id="style2"><span>样式二</span>
+        <input type="button" value="生成表单" id="btn">
+    </fieldset>
+    <div id="table">
+        <span></span>
+    </div>
+<script src="task2-20.js"></script>
+</body>
+</html>

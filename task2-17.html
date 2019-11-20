@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task2-17</title>
+    <style>
+    .con{
+        padding:10px;
+        width:50%;
+        margin:0 auto;
+        text-align: center;
+    }
+    span{
+        font-size: 18px;
+        margin-right:5px;
+    }
+   a
+    #int{
+        height:30px;
+        width:250px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    #btn{
+        height:30px;
+        width:50px;
+        border-radius: 5px;
+        background:cornflowerblue;
+        margin-left:5px;
+       
+    }
+    .text{
+        margin:0;
+        padding:0;
+        text-align: left;
+        margin-left:205px;
+        /* color:rgb(141, 138, 138); */
+        background: transparent;
+    }
+    </style>
+</head>
+<body>
+    <div Class="con">
+       <span>名称:</span><input type="text" id="int">
+        <input type="button" value="验证" id="btn">
+        <p class="text">请输入4~16位字符</p>
+    </div>
+<script>
+    function addHandler(element,type,handler){   //绑定事件,兼容浏览器差异
+    if(element.addEventListener){      // IE9以下不兼容(dom2)
+        element.addEventListener(type,handler,false)
+    }else if(element.attachEvent){     //IE独有
+        element.attachEvent('on' + type ,handler)
+    }else{
+        element['on'+type] = handler;    //一个元素只能绑定一个处理程序(dom0)
+    }
+}
+    var Int=document.getElementById("int");
+    var Btn=document.getElementById("btn");
+    var text=document.getElementsByClassName("text")[0];
+    window.onload=function(){
+        addHandler(Btn,"click",checkvalue);
+    }
+    function checkvalue(){
+        var value=Int.value;
+        if(value==""){
+            text.style.color="red";
+            text.innerHTML="输入不能为空";
+            Int.style.border="2px solid red";
+        }
+        else if(check(value)>=4 && check(value)<=16){
+            text.style.color="green";
+            text.innerHTML="格式正确";
+            Int.style.border="2px solid green";
+        }
+        else{
+            text.style.color="red";
+            text.innerHTML="输入值应为4-16位";
+            Int.style.border="2px solid red";
+        }
+    }
+    function check(value){
+        var valueLength=0;
+        for(var i=0;i<value.length;i++){//这里有问题，不能是<=可能是因为数组是从0开始的，最后一个是不存在的
+            var charcode=value.charCodeAt(i);//输出unicode编码
+            if(charcode>=0 && charcode<=128){//true为英文相关字母和标点按键等
+                valueLength += 1;
+            }else{
+                valueLength += 2;
+            }
+         
+        }
+        return valueLength;
+    }
+</script>    
+</body>
+</html>

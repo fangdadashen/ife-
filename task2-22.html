@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", STXihei, "Microsoft YaHei", SimHei, "WenQuanYi Micro Hei";
+    }
+    table,td,th,tr{
+        border-collapse: collapse;
+    }
+    
+    #background td{
+        width:50px;
+        height:50px;
+        text-align: center;
+        border:1px solid #aaa;
+        font-size:20px;
+	    font-weight:bold;
+    }
+    #background td:first-child{
+        border:0;
+        border-right: 2px solid black;
+    }
+    #background tr:first-child td{
+        border:0;
+        border-bottom: 2px solid black;
+    }
+    #background tr:first-child td:first-child{
+        border:0;
+    }
+    #background td:last-child{
+        border-right:2px solid black;
+    }
+    #background tr:last-child td{
+        border-bottom: 2px solid black;
+    }
+    #background tr:last-child td:first-child{
+        border-bottom:0;
+    }
+    .contain{
+        position: relative;
+    }
+    #square{
+        width:50px;
+        height:50px;
+        position: absolute;
+        top:300px;
+        left:300px;
+        background: #f00;
+        transition:0.3s;
+    }
+    .square-face{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:10px;
+        background: blue;
+    }
+    .int{
+        margin-left:40px;
+        margin-top:5px;
+    }
+    input{
+        cursor: pointer;
+        margin:5px;
+        padding:5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="contain">
+            <table id="background"></table>
+        <div id="square">
+            <div class="square-face"></div>
+        </div>
+        <div class="int">
+            <input type="text" id="int">
+            <input type="button" id="run" value="执行">
+            <br>
+            <input type="button" id="go" value="GO">
+            <input type="button" id="left" value="TUN LEF">
+            <input type="button" id="right" value="TUN RIG">
+            <input type="button" id="bac" value="TUN BAC">
+        </div>
+    </div>
+    <script src="task2-22.js"></script>
+</body>
+</html>
