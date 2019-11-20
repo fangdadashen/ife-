@@ -1,0 +1,802 @@
+@charset "utf-8";
+html,body{
+    margin:0;
+    padding:0;
+}
+body{
+    color:#666;
+    font-size:12px;
+    background: #eeedec;
+    font-family:"SimHei","Microsoft Yahei","Arial";
+}
+a{
+    text-decoration: none;
+    cursor:pointer;
+}
+ul{
+    list-style-type:none;
+}
+.row:before,.row:after{
+    content:"";
+    display: table;
+    clear:both;
+}
+table{
+    border-collapse: collapse;
+}
+input{
+    cursor: pointer;
+}
+/* haeder */
+header{
+    height:56px;
+    background:#2189bf;
+    box-sizing: border-box;
+    
+}
+header:before,header:after{
+    content:"";
+    display: table;
+}
+header:after{
+    clear:both;
+}
+.header-left{
+    margin-top:0.75em;
+    margin-left:50px;
+    float: left;
+    
+}
+.header-right{
+    height:58px;
+    float: right;
+    display: flex;
+    align-items: center;
+    margin-right:100px;
+}
+.header-right div input{
+    width:273px;
+    height:28px;
+    border-radius: 14px;
+    border:1px solid transparent;
+    padding-left:30px;
+}
+.header-right>div{
+    position: relative;
+    
+} 
+.logo1{
+    z-index:5;
+    position:absolute;
+    left:3px;
+    top:3px;
+    background-image:url("https://hbimg.huabanimg.com/7b07a644c8b2ddf8dca0379008f9647a984f07e0d8d-6wDbB9_fw658");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width:25px;
+    height:25px;
+    background-size:25px 25px;
+}
+.header-right-more{
+    
+    /* background: palegreen; */
+    position: relative;
+    cursor: pointer;
+}
+.logo2{
+    position: absolute;
+    left:0;
+    margin-left:1em;
+    width:28px;
+    height:28px;
+    background-image:url("C:/Users/Administrator/Desktop/前端代码练习/images/人物头像_2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:20px 20px; 
+}
+header div span{
+    color:white;
+    height:28px;
+    line-height: 28px;
+    font-size:15px;
+    margin-left:45px;
+}
+.header-right div>a{
+    text-decoration: none;
+}
+/* content */
+article{
+    width:1280px;
+    margin:0 auto;
+    background:#2a2e3d;
+}
+.article-left{
+    background:#2a2e3d;
+    float: left;
+    width:260px;
+    height:1280px;
+}
+.headimage{
+    width:50px;
+    height:50px;
+    background:#b9babd;
+    border-radius:50%;
+    border:5px solid #2a2e3d;
+    box-shadow:0 0 0 1px #b9babd;
+    float:left;
+    margin-left:20px;
+}
+.head-left-top{
+    height:25px;
+    line-height: 25px;
+    color:white;
+    font-size:15px;
+    margin-left:100px;
+    /* background: lightblue; */
+}
+.header-top{
+    /* background: lightblue; */
+    margin-top:18px;
+    margin-left:30px;
+}
+.article-left-two{
+    color:#67778b;
+    font-size: 15px;
+    font-family: 'SimSun';
+    margin-top:18px;
+    /* background: lawngreen; */
+    margin-left:50px;
+    /* text-align: center; */
+}
+.left-one{
+    float: left;
+    /* background: #2189bf; */
+    margin-left:20px;
+    
+}
+.left-one span{
+    margin-left:4px;
+}
+.left-two{
+    /* background: lightcoral; */
+    margin-left:70px;
+    padding-left:20px;
+    border-left:1px solid #67778b;
+}
+.left-two span{
+    margin-left:4px;
+}
+.article-left-three{
+    color:#6e8096;
+    font-size: 12px;
+    
+}
+.article-left-three div{
+    border:10px solid transparent;
+    padding-top:4px;
+}
+.lj1{
+    background: #383d4e;
+    cursor: pointer;
+}
+.lj1 div{
+    position: relative;
+    /* background: lightcoral; */
+}
+.lj1 div a,.lj2 div a{
+    /* background: lightblue; */
+    border-right:7em solid transparent;
+    border-top:12px solid transparent;
+    border-bottom:12px solid transparent;
+    border-left:5px solid transparent;
+}
+.open{
+    color:white;
+}
+.wd-top{
+    padding-left:4em;
+}
+.wd{
+    padding-left:calc(6em + 5px);
+}
+.lj2 div{
+    padding-left:4em;
+    cursor: pointer;
+    position: relative;
+    
+    /* background: lightcoral; */
+}
+.lj1 div a:hover,.lj2 div a:hover{
+   color:white; 
+   /* font-size:15px; */
+}
+.lj2 div:hover{
+    background: #67778b86;
+}
+i{
+    position: absolute;
+    left:2em;
+    top:0;
+    /* background: lawngreen; */
+    /* float: left; */
+    width:20px;
+    height:20px;
+    background-repeat: no-repeat;
+    background-position:top center;
+    background-size:16px 16px;
+    
+    
+}
+.wd1{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/报表图标.png");
+}
+.wd2{
+    background-image:url("C:/Users/Administrator/Desktop/前端代码练习/images/文件图标-2.png");
+    left:5em;
+}
+.wd3{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/文档图标.png");
+    left:5em;
+}
+.wd3-2{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/方向-向下_图标.png");
+    left:3em;
+}
+.wd4{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/文档图标.png");
+    left:5em;
+}
+.wd5{
+    background-image:url("C:/Users/Administrator/Desktop/前端代码练习/images/文件图标-2.png");
+    left:5em;
+}
+.wd5-2{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/方向-向右_图标.png");
+    left:3em;
+}
+.wd6{
+    background-image:url("C:/Users/Administrator/Desktop/前端代码练习/images/文件图标-2.png");
+    left:5em;
+}
+.wd6-2{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/方向-向右_图标.png");
+    left:3em;
+}
+.wd7{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/收藏图标.png");
+}
+.wd8{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/分享图标.png");
+}
+.wd9{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/图库图标.png");
+}
+.wd10{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/记录图标.png");
+}
+.wd11{
+    background-image: url("C:/Users/Administrator/Desktop/前端代码练习/images/账户信息图标.png");
+}
+/*右边*/
+.statement{
+    float:left;
+    width:1020px;
+    background:#eeeeed;
+}
+.statement-right-top{
+    color:black;
+    background: white;
+    height:50px;
+    width:100%;
+    font-size: 13px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.377);
+}
+.statement-right-top a{
+    /* background:lightcoral; */
+    border-top:18px solid transparent;
+    border-bottom:18px solid transparent;
+    height:50px;
+    line-height:50px;
+}
+.ttt:before{
+    content:"/";
+    margin:0 15px;
+}
+.ttt1{
+    margin-left:15px;
+}
+.ttt:hover,.ttt1:hover{
+    color:rgba(255, 0, 0, 0.315);
+}
+.in-statement{
+    width:892px;
+    margin:0 auto;
+}
+.in-statement-first{
+    display: flex;
+    flex-flow:nowrap;
+    border:1px solid #dddfe1;
+    height:70px;
+    background: #fff;
+    border-radius:5px;
+    margin-top:20px;
+    color:black;
+    padding:20px;
+    font-size:15px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.329);
+}
+
+.in-s-f-f{
+    /* background: #6e8096; */
+    width:130px;
+    height:100%;
+}
+.in-s-f-s{
+    height:100%;
+    margin-left:30px;
+    /* background: lightblue; */
+    width:230px;
+    display: flex;
+    flex-flow: wrap;
+}
+.select-one{
+    border-radius: 3px;
+    width:70px;
+    height: 25px;
+    margin-top:5px;
+    cursor: pointer;
+    /* -webkit-appearance: none; */
+    /* background:url("C:/Users/Administrator/Desktop/前端代码练习/images/方向-向下_图标.png") no-repeat 90%;
+    background-size:10px 10px; */
+}
+.select-two{
+    width:120px;
+    height:25px;
+    border-radius: 3px;
+    margin:5px;
+    cursor: pointer;
+}
+.select-right{
+    line-height: 70px;
+    height:70px;
+    background: rgb(150, 146, 146);
+}
+.in-s-f-thr{
+    display: flex;
+    flex-flow: nowrap;
+}
+.select-three,.select-fore,.select-five,.select-six,.sub-1{
+    height:25px;
+    margin:5px;
+    border-radius: 3px;
+    width:100px;
+    cursor: pointer;
+}
+.sub-1{
+    width:50px;
+    border:1px solid transparent;
+    background: #2189bf;
+    margin-top:20px;
+    cursor: pointer;
+}
+.in-statement-second{
+    display: flex;
+    flex-flow:nowrap;
+    /* background: rgba(102, 102, 102, 0.219); */
+    height: 100px;
+    margin:20px auto;
+}  
+.in-statement-second div{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.329);
+}
+.in-s-s-1{
+    margin:5px;
+    /* border:1px solid rgba(121, 117, 117, 0.486); */
+    padding:10px ;
+    width:90px;
+    text-align: center;
+}
+.in-s-s-1:hover{
+    border-top:5px solid #2189bf;
+}
+
+.in-statement-second div{
+    cursor: pointer;
+    background: white;
+}
+.in-statement-second div span{
+    color:rgba(255, 0, 0, 0.568);
+    font-size:20px;
+}
+.in-statement-second div p{
+    /* font-size:20px; */
+    font-size: 14px;
+}
+.fangxiang-1,.fangxiang-2{
+    position:relative;
+    /* border:1px solid rgba(119, 115, 115, 0.384); */
+    width:30px;
+}
+.fangxiang-2{
+    margin:5px;
+}
+.fangxiang-1{
+    border-radius: 10px 0 0 10px;
+    margin:5px 5px 5px 0;
+}
+.fangxiang-1:hover,.fangxiang-2:hover{
+    background: #67778b;
+}
+.logo-n-2,.logo-n-1{
+    position:absolute;
+    left:5px;
+    top:15px;
+    width:20px;
+    height:50px;
+}
+.logo-n-2{
+    background:url("C:/Users/Administrator/Desktop/前端代码练习/images/方向-向右-粗.png") no-repeat center;
+    background-size:20px 30px;
+}
+.logo-n-1{
+    background:url("C:/Users/Administrator/Desktop/前端代码练习/images/方向-向左-粗.png") no-repeat center;
+    background-size:20px 30px;
+}
+.check-1{
+    border-radius: 0 10px 10px 0;
+    position: relative
+}
+.check-1:hover{
+    font-size:15px;
+    border-top:3px solid transparent;
+    color:rgba(179, 15, 15, 0.849);
+}
+.check-1 p{
+    width:80px;
+    height: 30px;
+    line-height: 30px;
+    padding-left:5px;
+}
+.chaxun-1{
+    position:absolute;
+    left:7px;
+    top:15px;
+    width:20px;
+    height:50px;
+    background:url("C:/Users/Administrator/Desktop/前端代码练习/images/查询.png") no-repeat center;
+    background-size:30px 30px;
+}
+.nnn{
+    display: inline-block;
+    margin-top: 10px;
+}
+.in-statement-third{
+    /* background: #67778b54; */
+    display:flex;
+    flex-flow: nowrap;
+}
+.in-statement-third div p{
+    line-height:20px;
+    margin-top:20px;
+    margin-left:10px;
+    font-size: 13px;
+}
+.in-statement-third div p span{
+    color:black;
+}
+.in-s-t-1,.in-s-t-2,.in-s-t-3,.in-s-t-4{
+    width:210px;
+    height:80px;
+    /* border: 1px solid black; */
+    margin:0 10px;
+    position: relative;
+    cursor: pointer;
+    z-index:1;
+    background: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.329);
+}
+.in-s-t-1{
+    border-left:5px solid rgba(0, 128, 0, 0.63);
+    margin:0 10px 0 0;
+}
+.in-s-t-2{
+    border-left:5px solid #2188bfc0;
+}
+.in-s-t-3{
+    border-left:5px solid rgba(255, 0, 0, 0.705);
+}
+.in-s-t-4{
+    border-left:5px solid rgba(255, 255, 0, 0.705);
+}
+.green,.yellow,.red,.blue{
+    width:70px;
+    height:60px;
+    position: absolute;
+    right:5px;
+    top:10px;
+    bottom:5px;
+    z-index: 5;
+}    
+.green{
+    background: rgba(0, 128, 0, 0.678);
+}
+.red{
+    background: rgba(255, 0, 0, 0.74);
+}
+.yellow{
+    background: rgba(255, 255, 0, 0.774);
+}
+.blue{
+    background: #2189bfc0;
+}
+.in-s-f-tab{
+    width:530px;
+    background:white;
+    margin-top:30px;
+    /* border:1px solid black; */
+    height:320px;
+    border-radius:10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.329);
+}
+.title-tab{
+    /* widows: 100%; */
+    height:40px;
+    background: #f4f5f6;
+    line-height: 40px;
+    padding-left:30px;
+    font-size:15px;
+    margin:0;
+}
+.in-s-f-table ul{
+    position: relative;
+    display: flex;
+}
+.in-s-f-table ul li{
+    /* flex:1; */
+    margin-right:5px;
+   
+}
+.in-s-f-table ul li input{
+    display: none;
+}
+input+label{
+    display: block;
+    font-size:15px;
+    background: rgba(207, 206, 206, 0.658);
+    text-align: center;
+    height: 30px;
+    width:70px;
+    line-height: 30px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+#con{
+    display:none;
+    position:absolute;
+    border:1px solid rgba(138, 134, 134, 0.548);
+    padding:30px;
+    left:0;
+    top:30px; 
+    margin:0 30px;
+    border-radius: 10px;
+}
+#con table{
+    width:400px;
+    border-radius:10px;
+    text-align: center;
+}
+#con table tr td{
+    padding:5px;
+}
+#con table tr td:hover{
+    background: #67778b;
+    color:white;
+    cursor: pointer;
+    
+}
+
+ /* input选中状态时候对应的label的样式 */
+.in-s-f-table ul li input:checked+label{
+    /* background: #333333;
+    color:#fff; */
+    color:black;
+    background: #fff;
+    border-top:1px solid rgba(138, 134, 134, 0.548);
+    border-left:1px solid rgba(138, 134, 134, 0.548);
+    border-right:1px solid rgba(138, 134, 134, 0.548);
+    border-bottom:1ps solid transparent;
+    
+}
+.in-s-f-table ul li input:checked+label+#con{
+    display: block;
+}
+.in-statement-force{
+     display: flex;
+    flex-flow: nowrap;
+}
+.in-statement-fifth{
+    background:white;
+    width:350px;
+    margin-top:30px;
+    margin-left:10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.329);
+   
+}    
+.in-s-ff-title{
+    height:40px;
+    background: #f4f5f6;
+    line-height: 40px;
+    padding-left:30px;
+    font-size:15px;
+    margin:0;
+}
+.in-statement-fifth div p span{
+    color:#c3c2c2;
+}
+.in-s-ff-middle{
+   /* display: flex;
+   margin:0; */
+}
+.in-s-ff-2{
+    padding-right:50px;
+   float: left;
+   display: block;
+   border-right:1px solid #ddd;
+   border-top:1px solid #ddd;
+   border-bottom:1px solid #ddd;
+}
+.in-s-ff-3{ 
+    display: block;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+.in-s-ff-4{
+    height:100px;
+    border-bottom: 1px solid #ddd;
+}
+.sub-ff{
+    margin-top:5px;
+    margin-left:120px;
+    background: #2189bf;
+    border:1px solid transparent;
+    height:25px;
+    width:50px;
+    border-radius: 5px;
+}
+.sp{
+    color:#c3c2c2;
+}
+.xt{
+    /* background: lightblue; */
+    margin:0 30px;
+}
+.xt p{
+    line-height:15px;
+}
+.date{
+    width:350px;
+    background:white;
+    padding:0 10px 20px 10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.329);
+
+}
+.in-statement-sixth{
+    margin-top:30px;
+    position: relative;
+}
+.date-title{
+    height:40px;
+    background: #f4f5f6;
+    line-height: 40px;
+    padding-left:15px;
+    font-size:15px;
+    margin:0;
+    width:355px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.329);
+}
+.date div select,.date div input{
+    border:1px solid #c3c2c2;
+    background:white;
+    
+}
+.sel-date{
+    padding:10px 0 10px 15px;
+}
+.tab-date{
+    width:350px;
+    
+}
+.tab-date tr td{
+    padding:5px;
+    text-align: center;
+    height: 40px;
+    cursor:pointer;
+}
+.week{
+    border-top:1px solid #2189bf;
+    border-bottom:1px solid #2188bf77;
+}
+tr td small{
+    color:rgba(207, 6, 6, 0.678);
+}
+.day-9,.day-12,.day-19{
+    color:white;
+    background: #666;
+}
+.tab-date tr td:hover{
+    color:white;
+    background: #666;
+}
+tr td small:hover{
+    color:lightblue;
+}
+.in-statement-seven{
+    width:500px;
+    background:white;
+    position: absolute;
+    top:0;
+    right:0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.329);
+    border-radius: 10px;
+}
+.car-title{
+    height:40px;
+    background: #f4f5f6;
+    line-height: 40px;
+    padding-left:15px;
+    font-size:15px;
+    margin:0;
+    border-radius: 10px 10px 0 0;
+}
+.in-statement-seven table{
+    text-align: center;
+    margin:25px 0 28px 50px;
+}
+.in-statement-seven tr td div p{
+    /* line-height:1px; */
+    height:4px;
+}
+.in-statement-seven tr:hover{
+    background: #67778b3f;
+    cursor:pointer;
+}
+.in-statement-seven table tr td,.in-statement-seven table tr th{
+    height:25px;
+}
+.in-statement-seven table tr th:nth-child(1){
+    width:66px;
+}
+.in-statement-seven table tr th:nth-child(2){
+    width:90px;
+}
+.bar{
+    display: inline-block;
+    width:168px;
+    height:4px;
+    background:#dcdcdc;
+}
+.car-1 p,.car-2 p,.car-3 p{
+    position: relative;
+    top:-12px;
+    
+    background:#ec6d51;
+}
+.car-4 p,.car-5 p,.car-6 p,.car-7 p,.car-8 p,.car-9 p,.car-10 p{
+    background: #7ecaf0;
+    position: relative;
+    top:-12px;
+}
+.w80_perc{width:80%;}
+.w70_perc{width:70%;}
+.w60_perc{width:60%;}
+.w55_perc{width:55%;}
+.w50_perc{width:50%;}
+.w40_perc{width:40%;}
+.w35_perc{width:35%;}
+.w30_perc{width:30%;}
+.w28_perc{width:28%;}
+.w25_perc{width:25%;}
+.w40_perc{width:40%;}
