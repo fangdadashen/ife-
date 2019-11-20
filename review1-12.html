@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    .con{
+        width:600px;
+        height:400px;
+        border:1px solid #333;
+        overflow:hidden;
+        position: relative;
+        top:100px;
+        margin:0 auto;
+    }
+    #list{
+        width:4200px;
+        height:400px;
+        z-index:1;
+        position: absolute;
+    }
+    img{
+        width:600px;
+        height:400px;
+        float: left;
+    }
+    #buttons{
+        height:10px;
+        width:100%;
+        z-index: 2;
+        position:absolute;
+        left:250px;
+        bottom:20px;
+        /* background:red; */
+    }
+    #buttons span{
+        cursor: pointer;
+        float: left;
+        border:1px solid #fff;
+        width: 10px;
+        height:10px;
+        border-radius: 50%;
+        margin:0 5px;
+    }
+    .on{
+        background: orangered;
+    }
+    .arrow{
+        cursor: pointer;
+        text-align: center;
+        font-size: 36px;
+        line-height: 39px;
+        /* font-weight: bold; */
+        height:40px;
+        width:40px;
+        position: absolute;
+        top:180px;
+        background:rgba(100, 102, 107, 0.3);
+        padding: 10px 0;
+        z-index:2;
+        display: none;
+    }
+    .arrow:hover{
+        background:rgba(0,0,0,0.3);
+    }
+    .con:hover .arrow{
+        display: block;
+    }
+    #prev{
+        left:20px;
+    }
+    #next{
+        right:20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div id="list" style="left:-600px;"><!--这里"left:-600px"不知为何要写在这里才生效-->
+            <img src="C:\Users\Administrator\Desktop\forth\images\sky.jpeg" alt="4"><!--left:0px-->
+            <img src="C:\Users\Administrator\Desktop\forth\images\1531996801-HhVOQfYvbK.jpg" alt="1"><!--left:-600px-->
+            <img src="C:\Users\Administrator\Desktop\forth\images\摄图网_500411248_wps图片.jpg" alt="2"><!--left:-1200px-->
+            <img src="C:\Users\Administrator\Desktop\forth\images\风景图片（1）.jpg" alt="3"><!--left:-1800px-->
+            <img src="C:\Users\Administrator\Desktop\forth\images\sky.jpeg" alt="4"><!--left:-2400px-->
+            <img src="C:\Users\Administrator\Desktop\forth\images\1531996801-HhVOQfYvbK.jpg" alt="1"><!--left:-3000px-->
+        </div>
+        <div id="buttons">
+            <span index='1' class="on"></span>
+            <span index='2'></span>
+            <span index='3'></span>
+            <span index='4'></span>
+        </div>
+        <!-- <div> -->
+            <a class="arrow" id="prev"><</a>
+            <a class="arrow" id="next">></a>
+        <!-- </div> -->
+    </div>
+    <script>
+        var con=document.getElementsByClassName('con')[0];
+        var list=document.getElementById('list');
+        var buttons=document.getElementById('buttons').getElementsByTagName('span');
+        var prev=document.getElementById('prev');
+        var next=document.getElementById('next');
+        var index=1;
+        var animated=false;//因为在进行动画切换时，一旦点击过快网络延迟的话，画面之间的切换会不完整，因此设定这样一个函数进行判断，只有在一个切换完成后才能执行下一个
+        var timer;
+
+        //对底下小圆点的设置
+        function showbutton(){
+            // 若是点击的小圆点已经是上一次点过了，即不进行任何操作
+            for(var i=0;i<buttons.length;i++){
+                if(buttons[i].className=='on'){
+                    buttons[i].className='';
+                    break;
+                }
+            }
+            // 若不是，怎把刚刚点击的小圆点设置classname='on'
+            buttons[index-1].className='on';
+        }
+       
+        // 对于左右切换按钮的设置
+        function change(value){
+            animated=true;//表示可以运行够go函数
+            var newleft=parseInt(list.style.left)+value;//最初的left：-600，加上新的value后会有所变化形成新的left，parseInt()这里是为了把字符串转换成数字
+            var time=300;//位移总时间
+            var interval=30;//位移时间间隔，两者相除得出位移次数
+            var speed=value/(time/interval);//每次位移量
+            function go(){
+                //条件判断分析:speed中(time/interval)始终是正的，因此正负判断关键在value中，当往右时(-600)为负，
+                //此时旧left值>新left(即目标)(旧left+(-600))值的话(往右),true,如果只有speed<0没有后面这个的话就会一
+                //直返回true，因为只要往右speed<0是恒定的,往左的判断亦是如此
+                if((speed<0&&parseInt(list.style.left)>newleft)||(speed>0&&parseInt(list.style.left)<newleft)){
+                    list.style.left=parseInt(list.style.left)+speed+'px';//这里表示一次要移动的量，比如这次是要移动1/60,再右setTimeout反复调用自己(在这里执行了60次)，完成整次位移为止
+                    setTimeout(go,interval);//setTimeout()只执行一次，这里在自己体内调用自己是用了递归的方法
+                }else{//不满足的条件就是parseInt(list.style.left)=newleft，即到达目标时，动画结束，animated=false，可以点击运行下一次的动画了
+                    animated=false;
+                    list.style.left=newleft+"px";
+                    if(newleft>-600){//-600表示已经是第一张(真)了，此时要切换成最后一张
+                        list.style.left=-2400+'px';
+                }
+                    else if(newleft<-2400){//-2400表示是最后一张(真)了，此时要切换成第一张
+                        list.style.left=-600+'px';
+                }
+                }
+            }
+            go();//不调用的化就直接跳过go函数不执行了
+        }
+        function play(){
+            timer=setInterval(function(){
+                next.onclick();
+            },3000)
+        }
+        function stop(){
+            clearInterval(timer);
+        }
+        window.onload=function(){
+            // 向左切换
+            prev.onclick=function(){
+                
+                if(animated==false){
+                    if(index==1){//变化小圆点的index,这里之所以是=而不是>是因为这是由onclick事件触发的，只有点击后才回运行一次
+                        index=4;
+                    }else{
+                        index-=1;
+                    }
+                    showbutton();//调用showbutton切换小圆点颜色    
+                    change(600);//向左移动一张图片
+                }
+            }
+            // 向右切换
+            next.onclick=function(){
+                if(animated==false){//这里的animated==false主要作用是等一次动画运行完，因为运行时animated=true，此时点击切换也没用
+                    if(index==4){
+                        index=1;
+                    }else{
+                        index+=1;
+                    }
+                    showbutton();
+                    change(-600);//向右移动一张图片
+                }
+            }
+            for(var i=0;i<buttons.length;i++){
+                buttons[i].onclick=function(){
+                    if(this.className=='on'){
+                        return;
+                    }
+                    var myindex=parseInt(this.getAttribute('index'));//获取目前点击的图片对应的小圆点
+                    var value=-600*(myindex-index);//把目前点击的小圆点和上一个点击的小圆点的index值相减，
+                                                   //得到的值乘-600(右),若相减为负值，那么负负得正，就会向左移动请不要担心
+                    index=myindex;
+                    if(animated==false){
+                    change(value);
+                    }
+                    showbutton();
+                }
+            }
+            con.onmouseover=stop;//这里加（）表示立即执行，无论是否有事件绑定，因此不需要加（）
+            con.onmouseout=play;
+            play();
+        }
+    </script>
+</body>
+</html>

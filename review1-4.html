@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .con{
+            height:200px;
+            width: 400px;
+            background: rgba(128, 128, 128, 0.507);
+            position:relative;
+            left:50%;
+            margin-left:-200px;
+            margin-top:200px;
+        }
+        .left{
+            height:50px;
+            width:50px;
+            background: yellow;
+            border-radius: 0 0 50px 0;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        .right{
+            height:50px;
+            width:50px;
+            background: yellow;
+            border-radius: 50px 0 0 0;
+            position:absolute;
+            bottom:0;
+            right:0;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- <div class="flex"> -->
+      <div class="con">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+    <!-- </div> -->
+</body>
+</html>
